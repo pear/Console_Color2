@@ -254,5 +254,16 @@ class Console_Color {
         return str_replace('%', '%%', $string);
     }
 
+    /**
+     * Strips ANSI color codes from a string
+     *
+     * @acess public
+     * @param string string
+     * @return string
+     */
+    function strip($string) {
+        return preg_replace('/\033\[[\d;]+m/','',$string);
+    }
+
 }
 ?>
