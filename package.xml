@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<package version="1.0">
+  <name>Console_Color</name>
+  <summary>
+    This Class allows you to easily use ANSI console colors in your application.
+  </summary>
+  <description>
+    You can use Console_Color::convert to transform colorcodes like %r into ANSI
+    control codes. print Console_Color::convert("%rHello World!%n"); would print
+    "Hello World" in red, for example.
+  </description>
+  <maintainers>
+    <maintainer>
+      <user>et</user>
+      <name>Stefan Walk</name>
+      <email>post@fuer-et.de</email>
+      <role>lead</role>
+    </maintainer>
+  </maintainers>
+  <release>
+    <version>0.0.3</version>
+    <date>2003-04-27</date>
+    <license>PHP</license>
+    <state>beta</state>
+    <notes>
+      Fixed installation of examples and a `undefined index' Notice.
+    </notes>
+    <filelist>
+      <dir name="/" baseinstalldir="Console">
+        <file role="php" 
+          name="Color.php"
+          md5sum="4f733116e490b128d58f7e49e7b1f5d8" /> 
+        <dir name="examples">
+          <file role="doc"
+            name ="color_example.php"
+            md5sum="a5a67721c6ef80fc339252a93609009d" />
+          <file role="doc"
+            name="documentation"
+            md5sum="32593f1641504e01f9fb6df55c1c5478" />
+        </dir>
+        <file role="doc"
+          name="LICENSE"
+          md5sum="56e7876babee694afcf5aa631bbe2a54" />
+      </dir>
+    </filelist>
+  </release>
+</package>
