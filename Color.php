@@ -18,7 +18,7 @@
 //
 // $Id$
 
-$_CONSOLE_COLOR_CODES = array (
+$GLOBALS['_CONSOLE_COLOR_CODES'] = array (
     'color' => array(
             'black'  => 30,
             'red'    => 31,
