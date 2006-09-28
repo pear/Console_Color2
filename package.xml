@@ -18,12 +18,11 @@
     </maintainer>
   </maintainers>
   <release>
-    <version>0.0.4</version>
-    <date>2006-09-28</date>
+    <version>0.0.x</version>
+    <date>2006-xx-xx</date>
     <license>PHP</license>
     <state>beta</state>
     <notes>
-      Fix #563: Incorrect use of global variable
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Console">
