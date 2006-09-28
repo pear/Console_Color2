@@ -18,12 +18,12 @@
     </maintainer>
   </maintainers>
   <release>
-    <version>0.0.3</version>
-    <date>2003-04-27</date>
+    <version>0.0.4</version>
+    <date>2006-09-28</date>
     <license>PHP</license>
     <state>beta</state>
     <notes>
-      Fixed installation of examples and a `undefined index' Notice.
+      Fix #563: Incorrect use of global variable
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Console">
@@ -38,9 +38,6 @@
             name="documentation"
             md5sum="32593f1641504e01f9fb6df55c1c5478" />
         </dir>
-        <file role="doc"
-          name="LICENSE"
-          md5sum="56e7876babee694afcf5aa631bbe2a54" />
       </dir>
     </filelist>
   </release>
