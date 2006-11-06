@@ -16,26 +16,32 @@
       <email>post@fuer-et.de</email>
       <role>lead</role>
     </maintainer>
+    <maintainer>
+      <user>et</user>
+      <name>Stefan Walk</name>
+      <email>post@fuer-et.de</email>
+      <role>lead</role>
+    </maintainer>
+    <maintainer>
+      <user>scottmattocks</user>
+      <name>Scott Mattocks</name>
+      <email>scottmattocks@php.net</email>
+      <role>lead</role>
+    </maintainer>
   </maintainers>
   <release>
-    <version>0.0.x</version>
-    <date>2006-xx-xx</date>
+    <version>1.0.0</version>
+    <date>2006-11-06</date>
     <license>PHP</license>
-    <state>beta</state>
+    <state>stable</state>
     <notes>
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Console">
-        <file role="php" 
-          name="Color.php"
-          md5sum="4f733116e490b128d58f7e49e7b1f5d8" /> 
+        <file role="php" name="Color.php" /> 
         <dir name="examples">
-          <file role="doc"
-            name ="color_example.php"
-            md5sum="a5a67721c6ef80fc339252a93609009d" />
-          <file role="doc"
-            name="documentation"
-            md5sum="32593f1641504e01f9fb6df55c1c5478" />
+          <file role="doc" name ="color_example.php" />
+          <file role="doc" name="documentation" />
         </dir>
       </dir>
     </filelist>
