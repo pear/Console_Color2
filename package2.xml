@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.11" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Console_Color</name>
+ <channel>pear.php.net</channel>
+ <summary>This Class allows you to easily use ANSI console colors in your application.</summary>
+ <description>You can use Console_Color::convert to transform colorcodes like %r into ANSI
+control codes. print Console_Color::convert(&quot;%rHello World!%n&quot;); would print
+&quot;Hello World&quot; in red, for example.
+ </description>
+ <lead>
+  <name>Stefan Walk</name>
+  <user>et</user>
+  <email>post@fuer-et.de</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Scott Mattocks</name>
+  <user>scottmattocks</user>
+  <email>scottmattocks@php.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2006-11-16</date>
+ <time>09:35:46</time>
+ <version>
+  <release>1.0.1</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.php.net/license">PHP</license>
+ <notes>Update to package2.xml
+ </notes>
+ <contents>
+  <dir name="/">
+   <dir name="examples">
+    <file baseinstalldir="Console" name="color_example.php" role="doc" />
+    <file baseinstalldir="Console" name="documentation" role="doc" />
+   </dir> <!-- //examples -->
+   <file baseinstalldir="Console" name="Color.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2006-11-06</date>
+   <license uri="http://www.php.net/license">PHP License</license>
+   <notes>First stable release.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.1</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2006-11-16</date>
+   <license uri="http://www.php.net/license">PHP License</license>
+   <notes>Update to package2.xml
+   </notes>
+  </release>
+ </changelog>
+</package>
