@@ -1,24 +1,36 @@
 <?php
+/**
+ * Color.php
+ *
+ * PHP version 4
+ * 
+ * Copyright (c) 2007 Stefan Walk
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy 
+ * of this software and associated documentation files (the "Software"), to 
+ * deal in the Software without restriction, including without limitation the 
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+ * sell copies of the Software, and to permit persons to whom the Software is 
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in 
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+ * IN THE SOFTWARE.
+ *
+ * @category Console
+ * @package  Console_Color
+ * @author   Stefan Walk <et@php.net>
+ * @license  http://www.opensource.org/licenses/mit-license.php MIT License
+ * @link     http://pear.php.net/package/Console_Color
+ */
 
-// Copyright (c) 2007 Stefan Walk
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy 
-// of this software and associated documentation files (the "Software"), to 
-// deal in the Software without restriction, including without limitation the 
-// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
-// sell copies of the Software, and to permit persons to whom the Software is 
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in 
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
-// IN THE SOFTWARE.
 
 $GLOBALS['_CONSOLE_COLOR_CODES'] = array (
     'color' => array(
@@ -64,13 +76,14 @@ $GLOBALS['_CONSOLE_COLOR_CODES'] = array (
  * They are easier to use. However, if you want to access colorcodes more
  * directly, look into the other functions.
  *
- * @package Console_Color
  * @category Console
- * @author Stefan Walk <et@php.net>
- * @license http://www.opensource.org/licenses/mit-license.php MIT License
- *
+ * @package  Console_Color
+ * @author   Stefan Walk <et@php.net>
+ * @license  http://www.opensource.org/licenses/mit-license.php MIT License
+ * @link     http://pear.php.net/package/Console_Color
  */
-class Console_Color {
+class Console_Color
+{
 
     /**
      * Returns an ANSI-Controlcode
@@ -79,39 +92,47 @@ class Console_Color {
      * FG Color, style and BG color, or one array with the indices color, style
      * or background.
      *
-     * @access public
-     * @param mixed $color Optional
-     *   Either a string with the name of the foreground color, or
-     *   an array with the indices 'color', 'style', 'background' and
-     *   corresponding names as values.
-     * @param string $style Optional name of the style
+     * @param mixed  $color      Optional.
+     *                           Either a string with the name of the foreground
+     *                           color, or an array with the indices 'color', 
+     *                           'style', 'background' and corresponding names as
+     *                           values.
+     * @param string $style      Optional name of the style
      * @param string $background Optional name of the background color
+     *
+     * @access public
      * @return string
      */
-    function color($color=null, $style = null, $background = null) // {{{
+    function color($color = null, $style = null, $background = null) // {{{
     {
         $colors = &$GLOBALS['_CONSOLE_COLOR_CODES'];
         if (is_array($color)) {
-            $style = @$color['style'];
+            $style      = @$color['style'];
             $background = @$color['background'];
-            $color = @$color['color'];
+            $color      = @$color['color'];
         }
+
         if ($color == 'reset') {
             return "\033[0m";
         }
+
         $code = array();
         if (isset($color)) {
             $code[] = $colors['color'][$color];
         }
+
         if (isset($style)) {
             $code[] = $colors['style'][$style];
         }
+
         if (isset($background)) {
             $code[] = $colors['background'][$background];
         }
+
         if (empty($code)) {
             $code[] = 0;
         }
+
         $code = implode(';', $code);
         return "\033[{$code}m";
     } // }}}
@@ -119,8 +140,9 @@ class Console_Color {
     /**
      * Returns a FG color controlcode
      *
+     * @param string $name Name of controlcode
+     *
      * @access public
-     * @param string $name
      * @return string
      */
     function fgcolor($name)
@@ -132,8 +154,9 @@ class Console_Color {
     /**
      * Returns a style controlcode
      *
+     * @param string $name Name of controlcode
+     *
      * @access public
-     * @param string $name
      * @return string
      */
     function style($name)
@@ -145,8 +168,9 @@ class Console_Color {
     /**
      * Returns a BG color controlcode
      *
+     * @param string $name Name of controlcode
+     *
      * @access public
-     * @param string $name
      * @return string
      */
     function bgcolor($name)
@@ -184,12 +208,13 @@ class Console_Color {
      * colors should be used. It defaults to true, if set to false, the
      * colorcodes will just be removed (And %% will be transformed into %)
      *
+     * @param string $string  String to convert
+     * @param bool   $colored Should the string be colored?
+     *
      * @access public
-     * @param string $string
-     * @param bool $colored
      * @return string
      */
-    function convert($string, $colored=true)
+    function convert($string, $colored = true)
     {
         static $conversions = array ( // static so the array doesn't get built
                                       // everytime
@@ -230,9 +255,10 @@ class Console_Color {
             '%_' => array('style' => 'bold')
             // }}}
         );
+
         if ($colored) {
             $string = str_replace('%%', '% ', $string);
-            foreach($conversions as $key => $value) {
+            foreach ($conversions as $key => $value) {
                 $string = str_replace($key, Console_Color::color($value),
                           $string);
             }
@@ -241,29 +267,34 @@ class Console_Color {
         } else {
             $string = preg_replace('/%((%)|.)/', '$2', $string);
         }
+
         return $string;
     }
 
     /**
      * Escapes % so they don't get interpreted as color codes
      * 
+     * @param string $string String to escape
+     *
      * @access public
-     * @param string string
      * @return string
      */
-    function escape($string) {
+    function escape($string) 
+    {
         return str_replace('%', '%%', $string);
     }
 
     /**
      * Strips ANSI color codes from a string
      *
+     * @param string $string String to strip
+     *
      * @acess public
-     * @param string string
      * @return string
      */
-    function strip($string) {
-        return preg_replace('/\033\[[\d;]+m/','',$string);
+    function strip($string) 
+    {
+        return preg_replace('/\033\[[\d;]+m/', '', $string);
     }
 
 }
