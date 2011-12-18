@@ -25,7 +25,7 @@ control codes. $console = new Console_Color2(); print $console-&gt;convert(&quot
   <active>no</active>
  </lead>
  <date>2011-12-18</date>
- <time>18:57:56</time>
+ <time>18:58:19</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -43,7 +43,6 @@ PHP5 syntax
    <file baseinstalldir="/" md5sum="d40e6390b9d6af9e6d1f417c579e9877" name="Console/Color2.php" role="php" />
    <file baseinstalldir="Console" md5sum="04c232aa258bd5c8d14b2a370fcd1292" name="examples/color_example.php" role="doc" />
    <file baseinstalldir="Console" md5sum="32593f1641504e01f9fb6df55c1c5478" name="examples/documentation" role="doc" />
-   <file baseinstalldir="/" md5sum="dbdc475b131287a31ce72d4484107721" name="Console_Color-0.1.0.tgz" role="data" />
    <file baseinstalldir="Console" md5sum="386286831b7c47adae39ddfb51d483ab" name="LICENSE" role="doc" />
    <file baseinstalldir="/" md5sum="ea4ee09f74764a34fc99e6da91a06c62" name="README" role="data" />
   </dir>
