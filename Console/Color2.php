@@ -2,7 +2,7 @@
 /**
  * Color.php
  *
- * PHP version 4
+ * PHP version 5
  * 
  * Copyright (c) 2007 Stefan Walk
  *
@@ -25,48 +25,12 @@
  * IN THE SOFTWARE.
  *
  * @category Console
- * @package  Console_Color
+ * @package  Console_Color2
  * @author   Stefan Walk <et@php.net>
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
- * @link     http://pear.php.net/package/Console_Color
+ * @link     http://pear.php.net/package/Console_Color2
  */
 
-
-$GLOBALS['_CONSOLE_COLOR_CODES'] = array (
-    'color' => array(
-            'black'  => 30,
-            'red'    => 31,
-            'green'  => 32,
-            'brown'  => 33,
-            'blue'   => 34,
-            'purple' => 35,
-            'cyan'   => 36,
-            'grey'   => 37,
-            'yellow' => 33
-    ),
-    'style' => array(
-            'normal'     => 0,
-            'bold'       => 1,
-            'light'      => 1,
-            'underscore' => 4,
-            'underline'  => 4,
-            'blink'      => 5,
-            'inverse'    => 6,
-            'hidden'     => 8,
-            'concealed'  => 8
-    ),
-    'background' => array(
-            'black'  => 40,
-            'red'    => 41,
-            'green'  => 42,
-            'brown'  => 43,
-            'yellow' => 43,
-            'blue'   => 44,
-            'purple' => 45,
-            'cyan'   => 46,
-            'grey'   => 47
-    )
-);
 
     
 /**
@@ -82,8 +46,59 @@ $GLOBALS['_CONSOLE_COLOR_CODES'] = array (
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  * @link     http://pear.php.net/package/Console_Color
  */
-class Console_Color
+class Console_Color2
 {
+
+    protected $color_codes;
+
+    public function __construct() {
+        $this->setColorCodes(array(
+                'color' => array(
+                        'black'  => 30,
+                        'red'    => 31,
+                        'green'  => 32,
+                        'brown'  => 33,
+                        'blue'   => 34,
+                        'purple' => 35,
+                        'cyan'   => 36,
+                        'grey'   => 37,
+                        'yellow' => 33
+                ),
+                'style' => array(
+                        'normal'     => 0,
+                        'bold'       => 1,
+                        'light'      => 1,
+                        'underscore' => 4,
+                        'underline'  => 4,
+                        'blink'      => 5,
+                        'inverse'    => 6,
+                        'hidden'     => 8,
+                        'concealed'  => 8
+                ),
+                'background' => array(
+                        'black'  => 40,
+                        'red'    => 41,
+                        'green'  => 42,
+                        'brown'  => 43,
+                        'yellow' => 43,
+                        'blue'   => 44,
+                        'purple' => 45,
+                        'cyan'   => 46,
+                        'grey'   => 47
+                )
+            )
+        );
+    }
+
+    public function setColorCodes($color_codes) 
+    {
+        $this->color_codes = $color_codes;
+    }
+
+    public function getColorCodes() 
+    {
+        return $this->color_codes;
+    }
 
     /**
      * Returns an ANSI-Controlcode
@@ -100,16 +115,15 @@ class Console_Color
      * @param string $style      Optional name of the style
      * @param string $background Optional name of the background color
      *
-     * @access public
      * @return string
      */
-    function color($color = null, $style = null, $background = null) // {{{
+    public function color($color = null, $style = null, $background = null) // {{{
     {
-        $colors = &$GLOBALS['_CONSOLE_COLOR_CODES'];
+        $colors = $this->getColorCodes();
         if (is_array($color)) {
-            $style      = @$color['style'];
-            $background = @$color['background'];
-            $color      = @$color['color'];
+            $style      = $color['style'];
+            $background = $color['background'];
+            $color      = $color['color'];
         }
 
         if ($color == 'reset') {
@@ -142,12 +156,12 @@ class Console_Color
      *
      * @param string $name Name of controlcode
      *
-     * @access public
      * @return string
      */
-    function fgcolor($name)
+    public function fgcolor($name)
     {
-        $colors = &$GLOBALS['_CONSOLE_COLOR_CODES'];
+        $colors = $this->getColorCodes();
+
         return "\033[".$colors['color'][$name].'m';
     }
     
@@ -156,26 +170,11 @@ class Console_Color
      *
      * @param string $name Name of controlcode
      *
-     * @access public
-     * @return string
-     */
-    function style($name)
-    {
-        $colors = &$GLOBALS['_CONSOLE_COLOR_CODES'];
-        return "\033[".$colors['style'][$name].'m';
-    }
-    
-    /**
-     * Returns a BG color controlcode
-     *
-     * @param string $name Name of controlcode
-     *
-     * @access public
      * @return string
      */
     function bgcolor($name)
     {
-        $colors = &$GLOBALS['_CONSOLE_COLOR_CODES'];
+        $colors = $this->getColorCodes();
         return "\033[".$colors['background'][$name].'m';
     }
 
@@ -211,10 +210,9 @@ class Console_Color
      * @param string $string  String to convert
      * @param bool   $colored Should the string be colored?
      *
-     * @access public
      * @return string
      */
-    function convert($string, $colored = true)
+    public function convert($string, $colored = true)
     {
         static $conversions = array ( // static so the array doesn't get built
                                       // everytime
@@ -259,7 +257,7 @@ class Console_Color
         if ($colored) {
             $string = str_replace('%%', '% ', $string);
             foreach ($conversions as $key => $value) {
-                $string = str_replace($key, Console_Color::color($value),
+                $string = str_replace($key, $this->color($value),
                           $string);
             }
             $string = str_replace('% ', '%', $string);
@@ -276,10 +274,9 @@ class Console_Color
      * 
      * @param string $string String to escape
      *
-     * @access public
      * @return string
      */
-    function escape($string) 
+    public function escape($string) 
     {
         return str_replace('%', '%%', $string);
     }
@@ -292,10 +289,9 @@ class Console_Color
      * @acess public
      * @return string
      */
-    function strip($string) 
+    public function strip($string) 
     {
         return preg_replace('/\033\[[\d;]+m/', '', $string);
     }
 
 }
-?>
