@@ -44,78 +44,15 @@ PHP5 syntax
  <dependencies>
   <required>
    <php>
-    <min>4.0.0</min>
+    <min>5.0.0</min>
    </php>
    <pearinstaller>
-    <min>1.4.0b1</min>
+    <min>1.5.6</min>
    </pearinstaller>
   </required>
  </dependencies>
  <phprelease />
  <changelog>
-  <release>
-   <version>
-    <release>1.0.0</release>
-    <api>1.0.0</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2006-11-06</date>
-   <license uri="http://www.php.net/license">PHP License</license>
-   <notes>
-First stable release.
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>1.0.1</release>
-    <api>1.0.0</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2006-11-16</date>
-   <license uri="http://www.php.net/license">PHP License</license>
-   <notes>
-Update to package2.xml
-   </notes>
-  </release>
-  <release>
-   <date>2007-01-26</date>
-   <version>
-    <release>1.0.2</release>
-    <api>1.0.0</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
-   <notes>
-License file, MIT license
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>1.0.3</release>
-    <api>1.0.0</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2010-10-25</date>
-   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
-   <notes>
-QA release
-Doc Bug #9948 	License file not included in tarball
-Request #14785 	Improve PHPCS results
-SVN dir layout
-   </notes>
-  </release>
   <release>
    <version>
     <release>0.1.0</release>
