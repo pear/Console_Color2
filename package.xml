@@ -19,14 +19,14 @@ control codes. print Console_Color::convert(&quot;%rHello World!%n&quot;); would
   <active>yes</active>
  </lead>
  <date>2011-12-18</date>
- <time>18:36:56</time>
+ <time>18:51:39</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
  </version>
  <stability>
-  <release>stable</release>
-  <api>stable</api>
+  <release>alpha</release>
+  <api>alpha</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>
@@ -34,7 +34,7 @@ PHP5 syntax
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="68d09798545466f4cf2152e710623934" name="Console/Color2.php" role="php" />
+   <file baseinstalldir="/" md5sum="d40e6390b9d6af9e6d1f417c579e9877" name="Console/Color2.php" role="php" />
    <file baseinstalldir="Console" md5sum="04c232aa258bd5c8d14b2a370fcd1292" name="examples/color_example.php" role="doc" />
    <file baseinstalldir="Console" md5sum="32593f1641504e01f9fb6df55c1c5478" name="examples/documentation" role="doc" />
    <file baseinstalldir="Console" md5sum="386286831b7c47adae39ddfb51d483ab" name="LICENSE" role="doc" />
@@ -122,8 +122,8 @@ SVN dir layout
     <api>0.1.0</api>
    </version>
    <stability>
-    <release>stable</release>
-    <api>stable</api>
+    <release>alpha</release>
+    <api>alpha</api>
    </stability>
    <date>2011-12-18</date>
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
