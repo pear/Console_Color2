@@ -121,9 +121,9 @@ class Console_Color2
     {
         $colors = $this->getColorCodes();
         if (is_array($color)) {
-            $style      = $color['style'];
-            $background = $color['background'];
-            $color      = $color['color'];
+            $style      = isset($color['style']) ? $color['style'] : null;
+            $background = isset($color['background']) ? $color['background'] : null;
+            $color      = isset($color['color']) ? $color['color'] : null;
         }
 
         if ($color == 'reset') {
