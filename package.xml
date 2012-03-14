@@ -24,10 +24,10 @@ control codes. $console = new Console_Color2(); print $console-&gt;convert(&quot
   <email>scottmattocks@php.net</email>
   <active>no</active>
  </lead>
- <date>2011-12-18</date>
- <time>18:58:19</time>
+ <date>2012-03-14</date>
+
  <version>
-  <release>0.1.0</release>
+  <release>0.1.1</release>
   <api>0.1.0</api>
  </version>
  <stability>
@@ -36,17 +36,22 @@ control codes. $console = new Console_Color2(); print $console-&gt;convert(&quot
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>
-PHP5 syntax
+  Fix undefined index E_NOTICEs [Tarcisio Gruppi]
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="d40e6390b9d6af9e6d1f417c579e9877" name="Console/Color2.php" role="php" />
-   <file baseinstalldir="Console" md5sum="04c232aa258bd5c8d14b2a370fcd1292" name="examples/color_example.php" role="doc" />
-   <file baseinstalldir="Console" md5sum="32593f1641504e01f9fb6df55c1c5478" name="examples/documentation" role="doc" />
-   <file baseinstalldir="Console" md5sum="386286831b7c47adae39ddfb51d483ab" name="LICENSE" role="doc" />
-   <file baseinstalldir="/" md5sum="ea4ee09f74764a34fc99e6da91a06c62" name="README" role="data" />
+   <dir name="Console">
+    <file name="Color2.php" role="php" />
+   </dir>
+   <dir name="examples">
+    <file  name="color_example.php" role="doc" />
+    <file name="documentation" role="doc" />
+   </dir>
+   <file name="LICENSE" role="doc" />
+   <file name="README" role="doc" />
   </dir>
  </contents>
+
  <dependencies>
   <required>
    <php>
@@ -57,8 +62,26 @@ PHP5 syntax
    </pearinstaller>
   </required>
  </dependencies>
+
  <phprelease />
+
  <changelog>
+  <release>
+   <version>
+    <release>0.1.1</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2012-03-14</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+    Fix undefined index E_NOTICEs [Tarcisio Gruppi]
+   </notes>
+  </release>
+
   <release>
    <version>
     <release>0.1.0</release>
@@ -74,5 +97,6 @@ PHP5 syntax
 PHP5 syntax
    </notes>
   </release>
+
  </changelog>
 </package>
