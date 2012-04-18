@@ -23,6 +23,6 @@
         "php": ">=5.0.0"
     },
     "autoload": {
-        "classmap": [ "Console/Color2.php" ]
+        "psr-0": { "Console_Color2": "" }
     }
 }
