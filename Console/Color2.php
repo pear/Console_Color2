@@ -131,12 +131,12 @@ class Console_Color2
         }
 
         $code = array();
-        if (isset($color)) {
-            $code[] = $colors['color'][$color];
-        }
-
         if (isset($style)) {
             $code[] = $colors['style'][$style];
+        }
+
+        if (isset($color)) {
+            $code[] = $colors['color'][$color];
         }
 
         if (isset($background)) {
@@ -217,15 +217,15 @@ class Console_Color2
         static $conversions = array ( // static so the array doesn't get built
                                       // everytime
             // %y - yellow, and so on... {{{
-            '%y' => array('color' => 'yellow'),
-            '%g' => array('color' => 'green' ),
-            '%b' => array('color' => 'blue'  ),
-            '%r' => array('color' => 'red'   ),
-            '%p' => array('color' => 'purple'),
-            '%m' => array('color' => 'purple'),
-            '%c' => array('color' => 'cyan'  ),
-            '%w' => array('color' => 'grey'  ),
-            '%k' => array('color' => 'black' ),
+            '%y' => array('color' => 'yellow',  'style' => 'normal'),
+            '%g' => array('color' => 'green',   'style' => 'normal'),
+            '%b' => array('color' => 'blue',    'style' => 'normal'),
+            '%r' => array('color' => 'red',     'style' => 'normal'),
+            '%p' => array('color' => 'purple',  'style' => 'normal'),
+            '%m' => array('color' => 'purple',  'style' => 'normal'),
+            '%c' => array('color' => 'cyan',    'style' => 'normal'),
+            '%w' => array('color' => 'grey',    'style' => 'normal'),
+            '%k' => array('color' => 'black',   'style' => 'normal'),
             '%n' => array('color' => 'reset' ),
             '%Y' => array('color' => 'yellow',  'style' => 'light'),
             '%G' => array('color' => 'green',   'style' => 'light'),
