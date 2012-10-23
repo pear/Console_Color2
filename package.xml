@@ -24,10 +24,10 @@ control codes. $console = new Console_Color2(); print $console-&gt;convert(&quot
   <email>scottmattocks@php.net</email>
   <active>no</active>
  </lead>
- <date>2012-03-14</date>
-
+ <date>2012-10-23</date>
+ <time>11:52:11</time>
  <version>
-  <release>0.1.1</release>
+  <release>0.1.2</release>
   <api>0.1.0</api>
  </version>
  <stability>
@@ -36,22 +36,18 @@ control codes. $console = new Console_Color2(); print $console-&gt;convert(&quot
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>
-  Fix undefined index E_NOTICEs [Tarcisio Gruppi]
+Bug #19626	Going from Light to Dark color does not work
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <dir name="Console">
-    <file name="Color2.php" role="php" />
-   </dir>
-   <dir name="examples">
-    <file  name="color_example.php" role="doc" />
-    <file name="documentation" role="doc" />
-   </dir>
-   <file name="LICENSE" role="doc" />
-   <file name="README" role="doc" />
+   <file baseinstalldir="/" md5sum="192fb4cd5fd64bf80938e955adf7f805" name="Console/Color2.php" role="php" />
+   <file baseinstalldir="/" md5sum="04c232aa258bd5c8d14b2a370fcd1292" name="examples/color_example.php" role="doc" />
+   <file baseinstalldir="/" md5sum="32593f1641504e01f9fb6df55c1c5478" name="examples/documentation" role="doc" />
+   <file baseinstalldir="/" md5sum="3d0940ae3b4c98e9f4184d2deae3ebe4" name="composer.json" role="data" />
+   <file baseinstalldir="/" md5sum="386286831b7c47adae39ddfb51d483ab" name="LICENSE" role="doc" />
+   <file baseinstalldir="/" md5sum="ea4ee09f74764a34fc99e6da91a06c62" name="README" role="doc" />
   </dir>
  </contents>
-
  <dependencies>
   <required>
    <php>
@@ -62,26 +58,8 @@ control codes. $console = new Console_Color2(); print $console-&gt;convert(&quot
    </pearinstaller>
   </required>
  </dependencies>
-
  <phprelease />
-
  <changelog>
-  <release>
-   <version>
-    <release>0.1.1</release>
-    <api>0.1.0</api>
-   </version>
-   <stability>
-    <release>alpha</release>
-    <api>alpha</api>
-   </stability>
-   <date>2012-03-14</date>
-   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
-   <notes>
-    Fix undefined index E_NOTICEs [Tarcisio Gruppi]
-   </notes>
-  </release>
-
   <release>
    <version>
     <release>0.1.0</release>
@@ -97,6 +75,35 @@ control codes. $console = new Console_Color2(); print $console-&gt;convert(&quot
 PHP5 syntax
    </notes>
   </release>
-
+  <release>
+   <version>
+    <release>0.1.1</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2012-03-14</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Fix undefined index E_NOTICEs [Tarcisio Gruppi]
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.2</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2012-10-23</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+   <notes>
+Bug #19626	Going from Light to Dark color does not work
+   </notes>
+  </release>
  </changelog>
 </package>
