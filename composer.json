@@ -2,7 +2,9 @@
     "name": "pear/Console_Color2",
     "description": "This Class allows you to easily use ANSI console colors in your application.",
     "type": "library",
-    "keywords": [ "console" ],
+    "keywords": [
+        "console"
+    ],
     "homepage": "https://github.com/pear/Console_Color2",
     "license": "MIT",
     "authors": [
@@ -20,9 +22,22 @@
         }
     ],
     "require": {
-        "php": ">=5.0.0"
+        "php": ">=5.0.0",
+        "pear/pear_exception": "*"
     },
     "autoload": {
-        "psr-0": { "Console_Color2": "" }
+        "psr-0": {
+            "Console": "./"
+        }
+    },
+    "include-path": [
+        "./"
+    ],
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Console_Color2",
+        "source": "https://github.com/pear/Console_Color2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
     }
 }
